@@ -350,3 +350,18 @@ body.site-active {
   font-family:'Playfair Display',serif; font-style:italic;
   margin-top: 20px;
 }
+
+/* JB STICKERS */
+.jb-sticker {
+  position: fixed;
+  z-index: 99999;
+  max-width: 150px;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 5px solid #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+  pointer-events: none;
+}

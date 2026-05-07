@@ -166,5 +166,44 @@ document.addEventListener('DOMContentLoaded', () => {
   window.makeWish = function() {
     document.getElementById('wish').style.display = 'block';
     document.querySelector('.wish-btn').style.display = 'none';
+    
+    // Spawn Justin Bieber stickers
+    spawnStickers();
   };
+
+  function spawnStickers() {
+    const stickers = [
+      'https://media.giphy.com/media/MhAieER1JpAze/giphy.gif',
+      'https://media.giphy.com/media/6Z9u0X0Z5z1vO/giphy.gif',
+      'https://media.giphy.com/media/PzQvWAhgfUipW/giphy.gif',
+      'https://media.giphy.com/media/11h2q1iA3wHwYw/giphy.gif',
+      'https://media.giphy.com/media/Nnme1X6MzEmUU/giphy.gif'
+    ];
+
+    for (let i = 0; i < 8; i++) {
+      setTimeout(() => {
+        const img = document.createElement('img');
+        img.src = stickers[i % stickers.length];
+        img.className = 'jb-sticker';
+        
+        // Random position
+        const randomX = Math.max(10, Math.random() * (window.innerWidth - 200));
+        const randomY = Math.max(10, Math.random() * (window.innerHeight - 200));
+        const randomRot = (Math.random() * 40) - 20; 
+        
+        img.style.left = randomX + 'px';
+        img.style.top = randomY + 'px';
+        img.style.transform = `rotate(${randomRot}deg) scale(0)`;
+        
+        document.body.appendChild(img);
+        
+        // Trigger pop animation
+        setTimeout(() => {
+          img.style.transform = `rotate(${randomRot}deg) scale(1)`;
+          img.style.opacity = '1';
+        }, 50);
+        
+      }, i * 400); // Stagger the popups
+    }
+  }
 });
