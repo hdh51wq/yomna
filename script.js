@@ -54,6 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
     introScreen.classList.add('hidden');
     document.body.classList.add('site-active');
     
+    // Add Justin Bieber - Baby playing at 43 seconds
+    const musicIframe = document.createElement('iframe');
+    musicIframe.style.display = 'none';
+    musicIframe.allow = 'autoplay';
+    musicIframe.src = 'https://www.youtube.com/embed/kffacxfA7G4?autoplay=1&start=43';
+    document.body.appendChild(musicIframe);
+    
     setTimeout(() => {
       introScreen.style.display = 'none';
       mainSite.style.display = 'block';
