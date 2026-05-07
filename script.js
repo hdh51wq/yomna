@@ -186,9 +186,25 @@ document.addEventListener('DOMContentLoaded', () => {
         img.src = stickers[i % stickers.length];
         img.className = 'jb-sticker';
         
-        // Random position
-        const randomX = Math.max(10, Math.random() * (window.innerWidth - 200));
-        const randomY = Math.max(10, Math.random() * (window.innerHeight - 200));
+        // Form a circle around the central text block
+        const angle = (i / 8) * Math.PI * 2; 
+        // Radius scales with screen size but stays outside the center card
+        const radius = Math.max(180, Math.min(window.innerWidth, window.innerHeight) * 0.35 + 30); 
+        
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        
+        // Add some random scatter so it's not a perfect geometric circle
+        const scatterX = (Math.random() * 40) - 20;
+        const scatterY = (Math.random() * 40) - 20;
+        
+        let randomX = centerX + Math.cos(angle) * radius - 75 + scatterX; // 75 is half width
+        let randomY = centerY + Math.sin(angle) * radius - 75 + scatterY;
+        
+        // Keep within bounds
+        randomX = Math.max(10, Math.min(window.innerWidth - 160, randomX));
+        randomY = Math.max(10, Math.min(window.innerHeight - 160, randomY));
+        
         const randomRot = (Math.random() * 40) - 20; 
         
         img.style.left = randomX + 'px';

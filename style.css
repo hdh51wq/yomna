@@ -354,7 +354,7 @@ body.site-active {
 /* JB STICKERS */
 .jb-sticker {
   position: fixed;
-  z-index: 99999;
+  z-index: 0;
   max-width: 150px;
   max-height: 150px;
   object-fit: cover;
