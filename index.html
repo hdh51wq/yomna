@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Yomna!</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ==================== INTRO SCREEN ==================== -->
+<div id="intro-screen">
+  <div id="intro-particles"></div>
+  <button id="runaway-btn">Click me ya 5ra 😏</button>
+  <div id="click-counter">Attempts: <span id="attempts">0</span></div>
+  <div id="taunt-text"></div>
+</div>
+
+<!-- ==================== MAIN WEBSITE (hidden initially) ==================== -->
+<div id="main-site" class="hidden">
+  <div class="stars-bg" id="stars"></div>
+
+  <div class="page" id="book-container">
+    
+    <!-- BOOK PAGE 1: HERO -->
+    <div class="book-page" data-page="0">
+      <div class="book-inner">
+        <div class="hero">
+          <span class="crown reveal-text">👑</span>
+          <h1 class="reveal-text">Happy Birthday,<br>Yomna!</h1>
+          <p class="subtitle reveal-text">Her Royal Highness, Queen of Potatoes & Good Vibes</p>
+          <span class="tagline reveal-text">🌟 The Queen has entered the building 🌟</span>
+        </div>
+        <div class="confetti-strip reveal-text">
+          <span>🥔</span><span>🌻</span><span>🥚</span><span>☀️</span><span>🎂</span><span>💛</span><span>🥔</span><span>🌟</span><span>🎉</span><span>🥚</span><span>☀️</span><span>💛</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK PAGE 2: FUN FACTS -->
+    <div class="book-page" data-page="1">
+      <div class="book-inner">
+        <div class="section">
+          <div class="card" data-emoji="🥔">
+            <h2 class="reveal-text"><span class="emoji">🔍</span> Fun facts about the Queen</h2>
+            <ul class="fact-list">
+              <li class="reveal-text"><span>🥔</span> She is clinically obsessed with potatoes. This is not a phase.</li>
+              <li class="reveal-text"><span>🥚</span> Her love language is eggs. Scrambled, fried, boiled — she accepts all forms.</li>
+              <li class="reveal-text"><span>💛</span> Her favourite colour is yellow. Like sunshine. Like her personality.</li>
+              <li class="reveal-text"><span>☀️</span> She runs on summer energy. Winter is simply not her season.</li>
+              <li class="reveal-text"><span>👑</span> She calls herself Queen — and honestly? She's not wrong.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK PAGE 3: REASONS -->
+    <div class="book-page" data-page="2">
+      <div class="book-inner">
+        <div class="section">
+          <div class="card" data-emoji="💛">
+            <h2 class="reveal-text"><span class="emoji">💛</span> Why she's simply the best</h2>
+            <div class="reasons-grid">
+              <div class="reason-pill reveal-text">❤️ Super sensitive (in the good way)</div>
+              <div class="reason-pill reveal-text">😂 Genuinely hilarious</div>
+              <div class="reason-pill reveal-text">🫂 The friend you actually call</div>
+              <div class="reason-pill reveal-text">💛 Caring like no other</div>
+              <div class="reason-pill full-width reveal-text">✨ Makes every room warmer just by being in it</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK PAGE 4: INSIDE JOKES -->
+    <div class="book-page" data-page="3">
+      <div class="book-inner">
+        <div class="section">
+          <div class="card" data-emoji="😭">
+            <h2 class="reveal-text"><span class="emoji">🤝</span> Things only we understand</h2>
+            <div class="joke-box reveal-text" data-icon="💀">Ya ni$$a, happy birthday. You know I mean it with all the love in the world.</div>
+            <div class="joke-box reveal-text" data-icon="🐾">7ayawenaaaa 🎂 — the most affectionate insult that ever existed.</div>
+            <div class="joke-box reveal-text" data-icon="✨">Ya 5ra it's your birthday and you deserve ALL of it 😭💛</div>
+            <p class="reveal-text" style="font-size:0.82rem;color:#a08020;margin-top:10px;font-style:italic;">* this section is for us only. outsiders won't understand. that's the point.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK PAGE 5: METERS -->
+    <div class="book-page" data-page="4">
+      <div class="book-inner">
+        <div class="section">
+          <div class="card" data-emoji="🥔">
+            <h2 class="reveal-text"><span class="emoji">🥔</span> The official Yomna meters</h2>
+            <div class="meter-wrap reveal-text">
+              <div class="meter-label"><span>Potato obsession level</span><span id="pct1">0%</span></div>
+              <div class="meter-bar"><div class="meter-fill" id="bar1" data-val="99"><span>CLINICALLY CONCERNING 🥔</span></div></div>
+            </div>
+            <br>
+            <div class="meter-wrap reveal-text">
+              <div class="meter-label"><span>Queen energy</span><span id="pct2">0%</span></div>
+              <div class="meter-bar"><div class="meter-fill" id="bar2" data-val="100"><span>OFF THE CHARTS 👑</span></div></div>
+            </div>
+            <br>
+            <div class="meter-wrap reveal-text">
+              <div class="meter-label"><span>Summer vibes only</span><span id="pct3">0%</span></div>
+              <div class="meter-bar"><div class="meter-fill" id="bar3" data-val="95"><span>ETERNAL SUMMER ☀️</span></div></div>
+            </div>
+            <br>
+            <div class="meter-wrap reveal-text">
+              <div class="meter-label"><span>Being a good friend</span><span id="pct4">0%</span></div>
+              <div class="meter-bar"><div class="meter-fill" id="bar4" data-val="100"><span>BEYOND POSSIBLE 💛</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOK PAGE 6: WISH -->
+    <div class="book-page" data-page="5">
+      <div class="book-inner">
+        <div class="wish-section">
+          <button class="wish-btn reveal-text" onclick="makeWish()">🎂 Press for your birthday wish 🎂</button>
+          <div class="wish-msg" id="wish">
+            <span class="confetti-burst">🥔👑💛☀️🎉</span>
+            <br>
+            Yomna, you absolute queen —<br>
+            may your year be as golden as your favourite colour,<br>
+            as warm as summer, and always full of potatoes.<br>
+            <br>
+            <strong>We love you, ya 7ayawena. 🖤</strong>
+          </div>
+        </div>
+        <div class="footer reveal-text">made with 💛 for the one and only Queen Yomna</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
