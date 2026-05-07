@@ -44,6 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
       tauntText.textContent = taunts[3];
       tauntText.style.opacity = '1';
       
+      // Mobile Safari/Chrome requires audio/video to be triggered synchronously inside a user interaction
+      // Also, display: none can sometimes pause playback to save resources, so we hide it with CSS
+      const musicIframe = document.createElement('iframe');
+      musicIframe.setAttribute('allow', 'autoplay');
+      musicIframe.style.position = 'absolute';
+      musicIframe.style.width = '1px';
+      musicIframe.style.height = '1px';
+      musicIframe.style.opacity = '0';
+      musicIframe.style.pointerEvents = 'none';
+      musicIframe.src = 'https://www.youtube.com/embed/kffacxfA7G4?autoplay=1&start=43';
+      document.body.appendChild(musicIframe);
+      
       setTimeout(() => {
         enterWebsite();
       }, 1000);
@@ -53,13 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function enterWebsite() {
     introScreen.classList.add('hidden');
     document.body.classList.add('site-active');
-    
-    // Add Justin Bieber - Baby playing at 43 seconds
-    const musicIframe = document.createElement('iframe');
-    musicIframe.style.display = 'none';
-    musicIframe.allow = 'autoplay';
-    musicIframe.src = 'https://www.youtube.com/embed/kffacxfA7G4?autoplay=1&start=43';
-    document.body.appendChild(musicIframe);
     
     setTimeout(() => {
       introScreen.style.display = 'none';
